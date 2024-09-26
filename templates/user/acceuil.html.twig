@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+{% block bar  %}
+
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="" class="navbar-brand">
+            <img class="w-25"  src="{{ asset ('img/logo2.png')}}" alt="Image">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto p-4 bg-secondary">
+                <a href="{{path('homee')}}" class="nav-item nav-link active">Home</a>
+                <a href="{{asset('../feature.html.twig')}}" class="nav-item nav-link">Produit</a>
+                <a href="class.html" class="nav-item nav-link">Evenement</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nutritioin</a>
+                    <div class="dropdown-menu text-capitalize">
+                        <a href="blog.html" class="dropdown-item">Regime</a>
+                        <a href="single.html" class="dropdown-item">Recette</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Blog</a>
+                <a href="#" id="toggle-login" class="nav-item nav-link toggle-login ">Join Now<i ></i></a>
+            </div>
+        </div>
+    </nav>
+    {% for flashMessage in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block login%}
+    <!-- Inclure les fichiers CSS -->
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .hide
+        {
+            display: none;
+        }
+
+    </style>
+
+    <section id="LoginCard" class="LoginCard slide-out-blurred-bottom hide ">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="sectioninfo mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                        <input class="checkbox2 " type="checkbox" id="reg-log" name="reg-log"/>
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <form class="card-front " method="POST" action={{ asset('login')}} >
+                                    <div class="center-wrap">
+                                        <div class="section">
+                                            <h4 class="h4login mb-4 pb-3">Log In</h4>
+                                            <a href="#" id="closebtn-signin"><i class="icon-close uil uil-times-circle"></i></a>
+                                            <div class="form-group">
+                                                <input type="Username" name="loginUsername" class="form-style" placeholder="Your Username" id="loginUsername"  >
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="loginpass" class="form-style" placeholder="Your Password" id="loginpass"  >
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <input type="submit" name="Login" value="Submit" class="submitbtn mt-2">
+
+                                            <p class="mb-0 mt-4 text-center">
+                                                <a href="Page_GiveEmail.php?val_id= <?= $valeur_id ?>" class="link">Forgot your password?</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- HERE ================================================================================================================================= -->
+                                <form class="card-back " method="POST"  enctype="multipart/form-data"                     >
+                                    {{form_start(formUser)}}
+                                    <div class="form  form-active  ">
+                                        <h4 class="pb-3">Sign Up</h4>
+                                        <a href="#" id="closebtn-signup"><i class="icon-close uil uil-times-circle"></i></a>
+
+                                        <div class="form-group ">
+                                            {{ form_widget(formUser.cin) }}
+                                            <i class="input-icon uil uil-user"></i>
+                                        </div>
+                                        <div class="form-group ">
+                                            {{ form_widget(formUser.nom) }}
+                                            <i class="input-icon uil uil-user"></i>
+                                        </div>
+                                        <div class="form-group ">
+                                            {{ form_widget(formUser.prenom) }}
+                                            <i class="input-icon uil uil-user"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.email) }}
+                                            <i class="input-icon uil uil-at"></i>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.password) }}
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.dateuser) }}
+                                            <i class="input-icon uil uil-calendar-alt"></i>
+                                        </div>
+                                        <button class="form__btn" id="btn-1">Next</button>
+                                    </div>
+                                    <div class="form  ">
+                                        <h4 class="pb-3">Sign Up</h4>
+                                        <a href="#" id="closebtn-signup"><i class="icon-close uil uil-times-circle"></i></a>
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.numTel) }}
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.adresse) }}
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            {{ form_widget( formUser.image) }}
+
+                                            <i class="input-icon uil uil-calendar-alt"></i>
+                                        </div>
+                                        <button class="form__btn" id="btn-3-prev">Previous</button>
+                                        <button class="form__btn invis" id="btn-3"></button>
+                                        {{ form_widget( formUser.Ajouter) }}
+
+                                    </div>
+                                    {{form_end(formUser)}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
