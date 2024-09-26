@@ -1,0 +1,220 @@
+{% extends 'contact.html.twig' %}
+{% block bar  %}
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>
+        Black Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800') }}" rel="stylesheet" />
+    <link href="{{ asset('https://use.fontawesome.com/releases/v5.0.6/css/all.css') }}" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="{{ asset('css/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{ asset('demo/demo.css') }}" rel="stylesheet" />
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="" class="navbar-brand">
+            <img class="w-25"  src="{{ asset ('img/logo2.png')}}" alt="Image">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto p-4 bg-secondary">
+                <a href="{{path('homee')}}" class="nav-item nav-link active">Home</a>
+                <a href="{{asset('../feature.html.twig')}}" class="nav-item nav-link">Produit</a>
+                <a href="class.html" class="nav-item nav-link">Evenement</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nutritioin</a>
+                    <div class="dropdown-menu text-capitalize">
+                        <a href="blog.html" class="dropdown-item">Regime</a>
+                        <a href="single.html" class="dropdown-item">Recette</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Blog</a>
+                <a href="{{path('readUser')}}" class="nav-item nav-link">Profile</a>
+            </div>
+        </div>
+    </nav>
+    {% for flashMessage in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
+  {% block pageheader %}
+
+      <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+          <h4 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase font-weight-bold">Profile</h4>
+          <div class="d-inline-flex">
+              <p class="m-0 text-white"><a class="text-white" href="{{path('homee')}}" >Home</a></p>
+              <p class="m-0 text-white px-2">/</p>
+              <p class="m-0 text-white">User Profile</p>
+          </div>
+      </div>
+  {% endblock %}
+{% block container %}
+
+{% endblock %}
+{% block features %}
+    <div class="row">
+        <div class="col-md-882">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Edit Profile</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Company (disabled)</label>
+                                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                </div>
+                            </div>
+                            <div class="col-md-3 px-md-1">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" placeholder="mike@email.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-md-1">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="City" value="Mike">
+                                </div>
+                            </div>
+                            <div class="col-md-4 px-md-1">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Postal Code</label>
+                                    <input type="number" class="form-control" placeholder="ZIP Code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>About Me</label>
+                                    <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-user">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="author">
+                        <div class="block block-one"></div>
+                        <div class="block block-two"></div>
+                        <div class="block block-three"></div>
+                        <div class="block block-four"></div>
+                        <a href="javascript:void(0)">
+                            <img class="avatar" src="img/emilyz.jpg" alt="...">
+                            <h5 class="title">Mike Andrew</h5>
+                        </a>
+                        <p class="description">
+                            Ceo/Co-Founder
+                        </p>
+                    </div>
+                    </p>
+                    <div class="card-description">
+                        Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="button-container">
+                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">
+                            <i class="fab fa-facebook"></i>
+                        </button>
+                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-google">
+                            <i class="fab fa-google-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<table border='1'>
+  <tr>
+      <th>ID</th>
+      <th>cin</th>
+      <th>username</th>
+      <th>email</th>
+
+  </tr>
+{% for objet in Users %}
+  <tr>
+      <td>{{ objet.idUser}}</td>
+      <td>{{ objet.cin}}</td>
+      <td>{{ objet.nom|upper }}</td>
+      <td>{{ objet.email }}</td>
+  </tr>
+   {% else %}
+
+   tableau not found!!!!!!
+ {% endfor %}
+
+</table>
+    <script src="{{ asset('js/core/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="{{ asset('https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE') }}"></script>
+    <!-- Chart JS -->
+    <script src="{{ asset('js/plugins/chartjs.min.js') }}"></script>
+    <!--  Notifications Plugin    -->
+    <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
+    <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="{{ asset('js/black-dashboard.min.js?v=1.0.0') }}"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+    <script src="{{ asset('demo/demo.js') }}"></script>
+{% endblock %}

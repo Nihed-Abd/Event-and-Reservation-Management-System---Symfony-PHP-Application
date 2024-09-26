@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+form{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.stepper {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+}
+
+.stepper div {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #0d6dfd3d;
+    margin: auto;
+}
+
+.step--1,
+.step--2,
+.step--3,
+.step--4 {
+    width: 5rem;
+    padding: 0.5rem 0;
+    background: #FFFFFF;
+    color: #666;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+    box-shadow: 0.2rem 0.2rem 0.5rem #0d6efd;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    padding: 0 35px;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 35px) perspective(100px);
+    z-index: 11;
+    display: block;
+}
+
+.form--header-container {
+    background: #0d6efd;
+    color: #fff;
+    height: 6rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.form--header-title {
+    font-size: 1.4rem;
+}
+
+.form--header-text {
+    padding: 0.5rem 0;
+}
+
+.inputreserv{
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 20rem;
+    display: block;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #bdbdbb;
+}
+.form__btn {
+    background: #0d6efd;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0.7rem;
+    width: 7rem;
+    margin: 1rem auto;
+    border-radius: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.form__btn:hover {
+    background: #0b58cc;
+}
+.form__btn2 {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.invis
+{
+    position: absolute;
+    top: -5000px;
+}
+
+.form--message-text {
+    width: 25rem;
+    background: #FFFFFF;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem #0d6efd;
+    animation: fadeIn 0.8s;
+    border-radius: 1rem;
+}
+
+
+
+.form-active {
+    z-index: 1000;
+    display: block;
+}
+
+.form-active-animate {
+    animation: moveRight 1s;
+}
+
+.form-inactive {
+    display: block;
+    animation: moveLeft 1s;
+}
+
+.stepper .step-active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-27rem) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0rem) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0rem) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(27rem) scale(0.9);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.input-visibility {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    display: center;
+    z-index: 200;
+}
+
+/*! Animation Input ====================================== */
+
+.flip-in-hor-bottom {
+	-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes flip-in-hor-bottom {
+    0% {
+      -webkit-transform: rotateX(80deg);
+              transform: rotateX(80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes flip-in-hor-bottom {
+    0% {
+      -webkit-transform: rotateX(80deg);
+              transform: rotateX(80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+  .flip-out-hor-top {
+	-webkit-animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+ @-webkit-keyframes flip-out-hor-top {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotateX(70deg);
+                transform: rotateX(70deg);
+        opacity: 0;
+        }
+  }
+  @keyframes flip-out-hor-top {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotateX(70deg);
+                transform: rotateX(70deg);
+        opacity: 0;
+      }
+  }
+  
