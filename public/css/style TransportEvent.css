@@ -1,0 +1,31 @@
+  .icon-close {
+    position: absolute;
+    top: 100%;
+    left: -40%;
+    font-size: 36px;
+    color: #FFFFFF;
+  }
+  
+  .icon-close:hover{
+    color: #0dcaf0;
+  }
+
+  #closebtn1Transp ,#closebtn2Transp
+{
+  position:absolute;
+  top: -10%;
+  left: 40%;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: 200px;
+  font-size: 20px;
+    color: #0dcaf0;
+}
+
+
+.hide
+{
+  display: none;
+}

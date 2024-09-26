@@ -1,0 +1,82 @@
+body{
+    font-family:sans-serif;
+}
+.formulaire{
+   width:450px;
+    margin: auto;
+    border: 1px solid teal;
+    padding: 15px;
+            
+}
+.titre{
+color: teal;
+font-weight: bolder;
+     } 
+input{
+    border-radius: 5px;
+    border: 1px solid teal;
+    height: 30px;
+    width: 100%;
+   outline:none;
+   padding-left: 15px;
+}
+.input-nom-prenom{
+    display: flex;
+    
+}
+.titre-input1{
+width: 45%;
+}
+.titre-input2{
+    
+    width: 45%;
+   margin-left: 30px; 
+}
+.titre-input{
+   padding-right: 20px;
+}
+        .input-pays-num{
+            display: flex;
+        }
+        .numero{
+margin-left:25px;
+margin-right: 25px;
+        }
+        .input-pays-num div{
+width: 127px;
+        }
+        .input-type-submit{
+            background-color: green;
+            color: whitesmoke;
+            text-align: center;
+            font-weight: bolder;
+           margin-top: 15px;
+           width:440px;
+           padding: 5px;
+          
+        }
+        .macarte{
+    width:700px;
+}
+.input-type-submit2{
+    margin: auto;
+    background-color: green;
+            color: whitesmoke;
+            text-align: center;
+            font-weight: bolder;
+           margin-top: 15px;
+           width:440px;
+           padding: 5px;
+    cursor: pointer;
+}
+.input-back{
+    margin: auto;
+    background-color: blue;
+            color: whitesmoke;
+            text-align: center;
+            font-weight: bolder;
+           margin-top: 15px;
+           width:440px;
+           padding: 5px;
+    cursor: pointer;
+}
